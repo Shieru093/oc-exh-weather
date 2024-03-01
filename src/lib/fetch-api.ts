@@ -1,6 +1,6 @@
 'use server';
 
-import { WeatherData } from '@/lib/types';
+import type { WeatherData } from '@/lib/types';
 
 export async function fetchWeatherData(location: string): Promise<WeatherData | undefined> {
 	try {

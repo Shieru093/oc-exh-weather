@@ -1,11 +1,28 @@
-const API_ENDPOINT = '';
+'use server';
 
-export async function fetchWeatherData(location: string) {
+import { WeatherData } from '@/lib/types';
+
+export async function fetchWeatherData(location: string): Promise<WeatherData | undefined> {
 	try {
-		const res = await fetch(API_ENDPOINT);
-		const weatherData = await res.json();
-		return weatherData[0];
+		const apiKey = process.env.WEATHER_API_KEY;
+		const res = await fetch(
+			`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`
+		);
+		if (!res.ok) {
+			throw new Error('HTTP error, status = ' + res.status);
+		}
+		const fullWeatherData = await res.json();
+
+		const weatherData: WeatherData = {
+			main: fullWeatherData.weather[0].main,
+			temp: fullWeatherData.main.temp,
+			humidity: fullWeatherData.main.humidity,
+			cityName: fullWeatherData.name,
+		};
+
+		return weatherData;
 	} catch (error) {
-		console.error('fetchエラー: ' + error);
+		console.error('Fetch Error: ' + error);
+		return undefined;
 	}
 }

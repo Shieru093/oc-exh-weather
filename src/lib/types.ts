@@ -1,5 +1,8 @@
-export type WeatherMainDataType = {
-	weather: string;
+export type WeatherData = {
+	main: string;
 	temp: number;
-	hum: number;
+	humidity: number;
+	cityName: string;
 };
+
+export type Weather = 'Clear' | 'Clouds' | 'Rain' | 'Snow';

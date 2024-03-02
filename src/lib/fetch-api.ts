@@ -1,5 +1,6 @@
 'use server';
 
+import { convertUnixTimestampToJST } from '@/lib/utils';
 import type { WeatherData } from '@/lib/types';
 
 export async function fetchWeatherData(location: string): Promise<WeatherData | undefined> {
@@ -18,6 +19,7 @@ export async function fetchWeatherData(location: string): Promise<WeatherData | 
 			temp: fullWeatherData.main.temp,
 			humidity: fullWeatherData.main.humidity,
 			cityName: fullWeatherData.name,
+			dt: convertUnixTimestampToJST(fullWeatherData.dt),
 		};
 
 		return weatherData;

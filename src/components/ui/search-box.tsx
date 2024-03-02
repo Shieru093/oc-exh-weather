@@ -1,3 +1,5 @@
+'use client';
+
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import ModalBase from '@/components/ui/modal-base';
@@ -16,6 +18,7 @@ export default function SearchBox({
 	if (!searching) {
 		return <></>;
 	}
+
 	return (
 		<ModalBase setState={setSearching}>
 			<input

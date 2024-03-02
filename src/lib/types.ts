@@ -3,6 +3,7 @@ export type WeatherData = {
 	temp: number;
 	humidity: number;
 	cityName: string;
+	dt: string;
 };
 
 export type Weather = 'Clear' | 'Clouds' | 'Rain' | 'Snow';

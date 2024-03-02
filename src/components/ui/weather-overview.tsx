@@ -31,7 +31,7 @@ export default function WeatherOverview({ location }: { location: string }) {
 			<p className="font-bold pb-8 text-[min(4vw,80px)] text-center text-gray-800">
 				{locationDict[weather.cityName]}
 			</p>
-			<p className="pl-20 text-[min(4vw,24px)]">現在の天気は...</p>
+			<p className="pl-20 text-[min(4vw,24px)]">現在( {weather.dt} 時点 )の天気は...</p>
 			<div className="flex justify-center pb-4">
 				<div className="flex flex-col item-center justify-center px-4 text-[min(10vw,140px)]">
 					<WeatherIcon weather={weather.main} />

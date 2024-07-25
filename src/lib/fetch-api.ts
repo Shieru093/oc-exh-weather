@@ -5,7 +5,8 @@ import type { WeatherData } from '@/lib/types';
 
 export async function fetchWeatherData(location: string): Promise<WeatherData | undefined> {
 	try {
-		const apiKey = process.env.WEATHER_API_KEY;
+		const apiKey: string = process.env.WEATHER_API_KEY ?? '';
+
 		const res = await fetch(
 			`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`
 		);

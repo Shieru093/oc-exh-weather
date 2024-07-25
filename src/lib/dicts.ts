@@ -9,7 +9,7 @@ export const locationDict: { [key: string]: string } = {
 	Okinawa: '沖縄',
 };
 
-export const weatherDict: { [key: string]: String } = {
+export const weatherDict: { [key: string]: string } = {
 	Clear: '晴れ',
 	Clouds: '曇り',
 	Rain: '雨',

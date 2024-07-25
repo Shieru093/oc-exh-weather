@@ -17,7 +17,7 @@ export default function SearchButton({
 				e.stopPropagation();
 				setSearching(true);
 			}}
-			className="bg-slate-50 border-2 border-gray-400 px-3 py-2 rounded-2xl text-gray-800"
+			className="bg-slate-50 border-2 border-gray-400 px-3 py-2 rounded-2xl text-gray-800 hover:bg-slate-100"
 		>
 			<SearchIcon className="text-[min(4vw,60px)]" />
 		</button>

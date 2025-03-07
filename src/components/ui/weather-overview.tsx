@@ -27,7 +27,7 @@ export default function WeatherOverview({ location }: { location: string }) {
 	}
 
 	return (
-		<div className="bg-white border-4 px-8 py-2 rounded-xl w-1/2">
+		<div className="bg-white border-4 px-8 py-2 rounded-xl w-2/5">
 			<p className="font-bold pb-8 text-[min(4vw,80px)] text-center text-gray-800">
 				{locationDict[weather.cityName]}
 			</p>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SearchBox from '@/components/ui/search-box';
 import SearchButton from '@/components/ui/search-button';
 import WeatherOverview from '@/components/ui/weather-overview';
+import Kyocotan from '@/components/ui/kyocotan';
 
 export default function Home() {
 	const [searching, setSearching] = useState<boolean>(false);
@@ -24,6 +25,12 @@ export default function Home() {
 				setSearching={setSearching}
 				setLocation={setLocation}
 			/>
+			<div className="absolute bottom-0 left-0 ml-8">
+				<Kyocotan searching={searching} />
+			</div>
+			<div className="absolute bottom-0 text-center p-2 w-full">
+				(C)KCG 2012
+			</div>
 		</main>
 	);
 }

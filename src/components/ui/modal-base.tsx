@@ -11,7 +11,7 @@ export default function ModalBase({
 				e.stopPropagation();
 				setState(false);
 			}}
-			className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center"
+			className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-10"
 		>
 			<div
 				onClick={(e) => {
